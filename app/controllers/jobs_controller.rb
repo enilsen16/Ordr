@@ -1,13 +1,14 @@
 class JobsController < ApplicationController
-  before_filter :check_authorization
+  # before_filter :check_authorization
   before_action :set_job, except: [:index, :new, :create, :deleted_index]
 
   def index
-    @jobs = Job.where(user: current_user)
+    jobs = Job.where(user: current_user)
+    render json: jobs, status:200
   end
 
   def show
-
+    @job = Job.find(params[:id])
   end
 
   def new
@@ -18,12 +19,13 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = Job.new(job_params)
-    @job.user = current_user
-    if @job.save
-      redirect_to @job, notice: 'Job was successfully created.'
+    job = Job.new(job_params)
+    job.user = current_user
+    if job.save
+      render json: job, status: 201, location: job
+      # redirect_to @job, notice: 'Job was successfully created.'
     else
-      render :new
+      render json: product.errors, status: 422
     end
   end
 
@@ -36,8 +38,10 @@ class JobsController < ApplicationController
   end
 
   def destroy
-    @job.destroy
-    redirect_to jobs_url, notice: 'Job was successfully destroyed.'
+    job = Job.find(params[:id])
+    job.destroy!
+    # redirect_to jobs_url, notice: 'Job was successfully destroyed.'
+    render nothing: true, status: 204
   end
 
   def content
