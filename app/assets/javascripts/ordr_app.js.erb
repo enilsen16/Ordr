@@ -1,0 +1,19 @@
+//=require_self
+//=require_tree ./ordr_app
+  var app = angular.module('ordrApp', ['ngRoute']);
+  app.config(['$httpProvider', function($httpProvider) {
+    $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]')
+    .attr('content');
+    $httpProvider.defaults.headers.common.Accept = 'application/json';
+  }]);
+
+  app.config(['$routeProvider', function($routeProvider) {
+    $routeProvider
+      .when('/jobs', {
+        controller: 'JobsCtrl',
+        templateUrl: <%= asset_path 'jobs_view.html' %>
+      })
+      .otherwise({
+        redirectTo: <%= asset_path "templates/jobs_view.html" %>
+      });
+  }])

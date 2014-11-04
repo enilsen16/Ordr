@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  # root 'welcome#index'
+  root 'angular#index'
   resources :jobs do
     get :deleted_index, on: :collection
     member do

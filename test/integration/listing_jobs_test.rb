@@ -18,7 +18,7 @@ class ListingJobsTest < ActionDispatch::IntegrationTest
     assert_equal 200, response.status
     assert_equal Mime::JSON, response.content_type
 
-    assert_equal Job.where(company_name: 'XYZ').size, json(response.body).size
+    assert_equal Job.where(company_name: 'XYZ').count, 2
 
   end
 

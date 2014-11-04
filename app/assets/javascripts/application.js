@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require angular.min
+//= require angular-route.min
+//= require ordr_app
 //= require_tree .
