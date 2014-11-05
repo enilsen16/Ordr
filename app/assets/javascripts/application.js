@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require angular.min
 //= require angular-route.min
+//= require angular-cookies.min
 //= require ordr_app
-//= require_tree .

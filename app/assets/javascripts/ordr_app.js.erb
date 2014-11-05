@@ -11,9 +11,9 @@
     $routeProvider
       .when('/jobs', {
         controller: 'JobsCtrl',
-        templateUrl: <%= asset_path 'jobs_view.html' %>
+        templateUrl: "<%= asset_path('templates/jobs_view.html') %>"
       })
       .otherwise({
-        redirectTo: <%= asset_path "templates/jobs_view.html" %>
+        redirectTo: "<%= asset_path('templates/jobs_view.html') %>"
       });
-  }])
+  }]);
