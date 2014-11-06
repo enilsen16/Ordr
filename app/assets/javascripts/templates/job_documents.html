@@ -1,0 +1,27 @@
+<section class="step_content">
+  <h2>Are all your documents complete / on hand?</h2>
+
+      <ul>
+        <li>Resume
+          <input type="checkbox" data-ng-model="job.resume">
+        </li>
+        <li>Cover Letter
+        <input type="checkbox" data-ng-model="job.cover_letter">
+        </li>
+        <li>Portfolio
+          <input type="checkbox" data-ng-model="job.portfolio">
+        </li>
+        <li>Certifications
+          <input type="checkbox" data-ng-model="job.certifications">
+        </li>
+        <li>References
+          <input type="checkbox" data-ng-model="job.references">
+        </li>
+        <li>Recommendations
+          <input type="checkbox" data-ng-model="job.recommendations">
+        </li>
+      </ul>
+
+    <button data-ng-click="update(job)" class="primary_button"> Save</button>
+
+</section>
