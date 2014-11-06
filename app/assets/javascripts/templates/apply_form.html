@@ -1,0 +1,10 @@
+<article class="outer_container">
+  <section class="step_content">
+    <form name="jobApplicationForm">
+      <label>When did you apply?</label>
+      <input type="date" data-ng-model="job_application.date">
+      <input type="checkbox" data-ng-model="job_application.sent" ng-true-value="'Sent" ng-false-value="'Not sent">
+      <button data-ng-click="update(job)" class="primary_button">Save</button>
+    </form>
+  </section>
+</article>

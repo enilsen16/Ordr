@@ -1,3 +1,15 @@
-<h1>Jobs</h1>
+<header class="list_header">
+  <h1>Job Entries</h1>
+</header>
 <div data-ng-controller="JobsCtrl" data-ng-init="index()">
+    <section class="job_entry_item" ng-repeat="job in jobs">
+      <div>
+        <h2>
+          {{job.title}}
+        </h2>
+        <h3>
+          {{job.company_name}}
+        </h3>
+      </div>
+    </section>
 </div>

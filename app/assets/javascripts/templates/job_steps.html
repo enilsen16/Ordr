@@ -1,0 +1,80 @@
+<header class="list_header">
+  <h1>
+    <%= t('job_steps.label') %>
+  </h1>
+</header>
+<section class="list_selected_job">
+  <h2>
+    <%= @job.title %>
+  </h2>
+  <h3>
+    <%= @job.company_name %>
+  </h3>
+</section>
+<%= link_to content_job_path({step: "details"}) do %>
+  <section class="step_title job_entry_item">
+    <div class="number_title">
+      <h3>1</h3>
+    </div>
+    <h2>
+      <%= t('job_steps.details.label') %>
+    </h2>
+  </section>
+<% end %>
+<%= link_to content_job_path({step: "research"}) do %>
+  <section class="step_title job_entry_item">
+    <div class="number_title">
+      <h3>2</h3>
+    </div>
+    <h2>
+      <%= t('job_steps.research.label') %>
+    </h2>
+  </section>
+<% end %>
+<%= link_to content_job_path({step: "networking"}) do %>
+  <section class="step_title job_entry_item">
+    <div class="number_title">
+      <h3>3</h3>
+    </div>
+    <h2>
+      <%= t('job_steps.networking.label') %>
+    </h2>
+  </section>
+<% end %>
+<%= link_to content_job_path({step: "documents"}) do %>
+  <section class="step_title job_entry_item">
+    <div class="number_title">
+      <h3>4</h3>
+    </div>
+    <h2>
+      <%= t('job_steps.documents.label') %>
+    </h2>
+  </section>
+<% end %>
+<%= link_to content_job_path({step: "apply"}) do %>
+  <section class="step_title job_entry_item">
+    <div class="number_title">
+      <h3>5</h3>
+    </div>
+    <h2>
+      <%= t('job_steps.apply.label') %>
+    </h2>
+  </section>
+<% end %>
+<%= link_to content_job_path({step: "interview"}) do %>
+  <section class="step_title job_entry_item">
+    <div class="number_title">
+      <h3>6</h3>
+    </div>
+    <h2>
+      <%= t('job_steps.interview.label') %>
+    </h2>
+  </section>
+<% end %>
+<%= link_to job_path(@job), method: :delete, data: { confirm: t('job.delete_confirmation') } do %>
+  <section class="close_job">
+    <h2>
+      <%= t('job.delete') %>
+    </h2>
+  </section>
+<% end %>
