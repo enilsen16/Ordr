@@ -7,13 +7,13 @@
         = t('job_steps.details.label')
     = link_to content_edit_job_path({step: 'details'}) do
       %button.add_button
-        = image_tag "edit_icon.svg", size: "20"
+        = image_tag "edit_icon.svg", size: "40"
     = link_to content_edit_job_path({step: 'details'}) do
       %button.add_button
-        = image_tag "add_note_icon.svg", size: "20"
+        = image_tag "add_note_icon.svg", size: "40"
     = link_to content_edit_job_path({step: 'details'}) do
       %button.add_button
-        = image_tag "add_contact_icon.svg", size: "20"
+        = image_tag "add_contact_icon.svg", size: "40"
 
 %section.step_content
   = form_for @job do |f|
